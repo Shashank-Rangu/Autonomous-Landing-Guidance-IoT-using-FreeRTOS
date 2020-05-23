@@ -122,14 +122,7 @@ int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t 
     double extime = (send_tick_counter * 1.0) / configTICK_RATE_HZ;
     FreeRTOS_printf(("Execution time for data send= %f \n", extime));
 
-    //Shutdown the socket, i.e. read and write are blocked on it henceforth
-    FreeRTOS_shutdown(xClientSocket, FREERTOS_SHUT_RDWR);
-
-    //Wait for socket to disconnect before closing the socket.
-    while (FreeRTOS_recv(xClientSocket, pcBufferToTransmitt, xTotalLengthToSend, 0) >= 0);
-
-    //Safely close the socket
-    FreeRTOS_closesocket(xClientSocket);
+    
 
     //Useful to close the socket automatically after the last packet of the file is sent
     /*BaseType_t xCloseAfterNextSend = pdTRUE;
@@ -139,5 +132,21 @@ int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t 
         (void*)&xCloseAfterNextSend,
         sizeof(xCloseAfterNextSend));
         */
+    
+    //Shutdown the socket, i.e. read and write are blocked on it henceforth
+    FreeRTOS_shutdown(xClientSocket, FREERTOS_SHUT_RDWR);
+
+    //Wait for socket to disconnect before closing the socket.
+    while (FreeRTOS_recv(xClientSocket, pcBufferToTransmitt, xTotalLengthToSend, 0) >= 0);
+
+    //Safely close the socket
+    FreeRTOS_closesocket(xClientSocket);
     return xBytesSent;
+}
+
+
+void vCloseSocket(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t xTotalLengthToSend)
+{
+    Socket_t xClientSocket = (Socket_t)socket_address;
+    
 }

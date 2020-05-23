@@ -93,6 +93,7 @@ static void prvSRand(UBaseType_t ulSeed);
 void initialise_network();
 Socket_t initialise_client_socket(void);
 void vRunApplication(void);
+void vLoadImage(void);
 void CannyFilter();
 void RSAencryption();
 void vTCPSend(void);
@@ -157,16 +158,12 @@ Socket_t initialise_client_socket(void)
 	xRemoteAddress.sin_addr = FreeRTOS_inet_addr_quick(192, 168, 190, 149);
 	client_socket = vCreateTCPClientSocket(&xRemoteAddress);
 	client_flag = 1;
+	xTaskCreate(vRunApplication, "Main", 1000, NULL, 3, NULL);
 	vTaskPrioritySet(NULL, 2);
-	for (;;)
-	{
-		xTaskCreate(vRunApplication, "Main", 1000, NULL, 3, NULL);
-	}
-	vTaskPrioritySet(NULL, tskIDLE_PRIORITY);
 	for (;;);
 }
 
-void vRunApplication(void)
+void vLoadImage(void)
 {
 	my_queue_handle = xQueueCreate(1, sizeof(myIMAGE_DATA));
 	bitmap_info_header_t ih;
@@ -175,17 +172,26 @@ void vRunApplication(void)
 	myIMAGE_DATA loaded_data;
 	loaded_data.bitmap_data = in_bitmap_data;
 	loaded_data.ih = ih;
-	
-	TaskHandle_t canny_handle, encryption_handle, send_handle;
-	BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
-	while (send_result != pdTRUE);
-	if (send_result == pdTRUE)
+	vTaskPrioritySet(NULL, 2);
+	FreeRTOS_printf(("Load Image is done"));
+	for (;;)
 	{
-		xTaskCreate(CannyFilter, "Canny", 1000, NULL, 6, &canny_handle);
-		xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 5, &encryption_handle);
-		xTaskCreate(vTCPSend, "send", 1000, NULL, 4, &send_handle);
+		BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
+		while (send_result != pdTRUE);
+		xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 3, NULL);
+
+		//Delete this client socket task and start the next send loop
+		vTaskDelete(xTaskGetHandle("Client")); 
 	}
-	
+}
+
+void vRunApplication(void)
+{
+	TaskHandle_t canny_handle, encryption_handle, send_handle;
+	xTaskCreate(CannyFilter, "Canny", 1000, NULL, 6, &canny_handle);
+	xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 5, &encryption_handle);
+	xTaskCreate(vTCPSend, "send", 1000, NULL, 4, &send_handle);	
+	for (;;);
 }
 
 void CannyFilter()
@@ -239,6 +245,7 @@ void vTCPSend(void)
 	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
 	while (send_result == 0);
 
+	vTaskDelete(xTaskGetHandle("Run"));
 	vTaskDelete(NULL);
 
 	for (;;);
@@ -312,8 +319,8 @@ void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 			 * For convenience, tasks that use FreeRTOS+TCP can be created here
 			 * to ensure they are not created before the network is usable.
 			 */
-			xTaskHandle initialise_client_handle;
-			xTaskCreate(initialise_client_socket, "client", 1000, NULL, 2, &initialise_client_handle);
+			xTaskHandle load_image_handle;
+			xTaskCreate(vLoadImage, "LoadImg", 1000, NULL, 2, &load_image_handle);
 			server_flag = 1;// Denotes that the client and the server are up and running
 			xTasksAlreadyCreated = pdTRUE;
 		}
