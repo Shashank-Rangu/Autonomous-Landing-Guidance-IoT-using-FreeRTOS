@@ -1,16 +1,3 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (.\Debug\) contains files shared from another project (Runway_Detection.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-cl : command line warning D9002: ignoring unknown option '/wc4574'
-  TCP_server.c
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(23,10): warning C4189: 'server_tick_counter': local variable is initialized but not referenced
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(24,10): warning C4101: 'start_ticker': unreferenced local variable
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(64,45): warning C4459: declaration of 'xReceiveTimeOut' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(7,25): message : see declaration of 'xReceiveTimeOut'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(92,16): warning C4189: 'socket_state': local variable is initialized but not referenced
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(116,16): warning C4098: 'Landing_guidance': 'void' function returning a value
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(109,29): warning C4100: 'pvParameters': unreferenced formal parameter
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(105): warning C4702: unreachable code
+  LINK : .\Debug\Runway_Detection_Server.exe not found or not built by the last incremental link; performing full link
   Server.vcxproj -> E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\.\Debug\Runway_Detection_Server.exe
