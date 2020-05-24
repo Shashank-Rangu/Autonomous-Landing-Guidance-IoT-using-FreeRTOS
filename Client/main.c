@@ -117,10 +117,6 @@ BaseType_t my_ticker = 0;
 //queue handle
 QueueHandle_t my_queue_handle;
 
-//Semaphore handle
-SemaphoreHandle_t my_semaphore_handle;
-
-
 
 /*
 * Struct to send and  recieve image data in queue
