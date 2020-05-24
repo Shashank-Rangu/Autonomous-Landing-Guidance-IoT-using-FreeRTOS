@@ -125,6 +125,7 @@ typedef struct my_image
 {
 	bitmap_info_header_t ih;
 	const pixel_t* bitmap_data;
+	int my_image_len;
 
 } myIMAGE_DATA;
 
@@ -178,6 +179,7 @@ void vLoadImage(void)
 	configASSERT(in_bitmap_data != NULL);
 	loaded_data.bitmap_data = in_bitmap_data;
 	loaded_data.ih = ih;
+	loaded_data.my_image_len = ih.height * ih.width;
 	FreeRTOS_printf(("Load Image is done. \n"));
 	//vTaskPrioritySet(NULL, 2);
 }
@@ -230,13 +232,13 @@ void RSAencryption()
 	pixel_t* edges_data = loaded_data.bitmap_data;
 	bitmap_info_header_t ih = loaded_data.ih;
 	int msg_length = ih.height * ih.width;
-	rsa_encryption(edges_data, msg_length);
+	compressed_image en_img = rsa_encryption(edges_data, msg_length);
 	FreeRTOS_printf(("Encryption is complete \n"));
 	vTaskPrioritySet(NULL, 6);
 
 	configASSERT(edges_data != NULL);
-	loaded_data.bitmap_data = edges_data;
-	loaded_data.ih = ih;
+	loaded_data.bitmap_data = en_img.en_msg;
+	loaded_data.my_image_len = en_img.en_msg_length;
 	BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
 	while (send_result != pdTRUE);
 	
@@ -250,9 +252,8 @@ void vTCPSend(void)
 	myIMAGE_DATA loaded_data;
 	xQueueReceive(my_queue_handle, &loaded_data, 0);
 	pixel_t* encrypted_data = loaded_data.bitmap_data;
-	bitmap_info_header_t ih = loaded_data.ih;
 
-	int msg_length = ih.height * ih.width;
+	int msg_length = loaded_data.my_image_len;
 	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
 	while (send_result == 0);
 
