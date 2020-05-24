@@ -159,17 +159,18 @@ void initialise_network()
 Socket_t initialise_client_socket(void)
 {
 	//This is a task function with a priority of 8 started by the vRunApplication
-	xSemaphoreTake(my_semaphore_handle, pdMS_TO_TICKS(4000));
+	
+	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 	struct freertos_sockaddr xRemoteAddress;
 	/* Set the IP address (192.168.xx.xx) and port (7) of the remote socket
 	to which this client socket will transmit. */
 	xRemoteAddress.sin_port = FreeRTOS_htons(7);
 	xRemoteAddress.sin_addr = FreeRTOS_inet_addr_quick(192, 168, 190, 149);
 	client_socket = vCreateTCPClientSocket(&xRemoteAddress);
-	client_flag = 1;
-	//xTaskCreate(vRunApplication, "Main", 1000, NULL, 4, NULL);
-	xSemaphoreGive(my_semaphore_handle);
+
 	vTaskPrioritySet(NULL, 3);
+	xTaskNotifyGive(xTaskGetHandle("Canny"));
+	//client_flag = 1;
 	for (;;);
 }
 
@@ -181,7 +182,7 @@ void vLoadImage(void)
 	configASSERT(in_bitmap_data != NULL);
 	loaded_data.bitmap_data = in_bitmap_data;
 	loaded_data.ih = ih;
-	FreeRTOS_printf(("Load Image is done"));
+	FreeRTOS_printf(("Load Image is done. \n"));
 	//vTaskPrioritySet(NULL, 2);
 }
 
@@ -190,22 +191,22 @@ void vRunApplication(void)
 	//This is a task function with a priority of 4 started by the NetworkEventHook
 	for (;;) 
 	{
-		xSemaphoreTake(my_semaphore_handle, pdMS_TO_TICKS(10000));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 		BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
 		while (send_result != pdTRUE);
 		xTaskHandle dummy_handle;
-		xSemaphoreGive(my_semaphore_handle);
-		xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 8, &dummy_handle);
+		xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 5, &dummy_handle);
 		TaskHandle_t canny_handle, encryption_handle, send_handle;
 		xTaskCreate(CannyFilter, "Canny", 1000, NULL, 7, &canny_handle);
 		xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 6, &encryption_handle);
 		xTaskCreate(vTCPSend, "send", 1000, NULL, 5, &send_handle);
+		xTaskNotifyGive(dummy_handle);
 	}
 }
 
 void CannyFilter()
 {
-	xSemaphoreTake(my_semaphore_handle, pdMS_TO_TICKS(4000));
+	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 	myIMAGE_DATA loaded_data;
 	xQueueReceive(my_queue_handle, &loaded_data, 0);
 	pixel_t* in_bitmap_data = loaded_data.bitmap_data;
@@ -220,13 +221,14 @@ void CannyFilter()
 	loaded_data.ih = ih;
 	BaseType_t send_resut= xQueueSend(my_queue_handle, &loaded_data, 0);
 	while (send_resut != pdTRUE);
-	xSemaphoreGive(my_semaphore_handle);
+	
+	xTaskNotifyGive(xTaskGetHandle("encrypt"));
 	vTaskDelete(NULL);
 }
 
 void RSAencryption()
 {
-	xSemaphoreTake(my_semaphore_handle, pdMS_TO_TICKS(4000));
+	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 	myIMAGE_DATA loaded_data;
 	xQueueReceive(my_queue_handle, &loaded_data, 0);
 	pixel_t* edges_data = loaded_data.bitmap_data;
@@ -241,13 +243,14 @@ void RSAencryption()
 	loaded_data.ih = ih;
 	BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
 	while (send_result != pdTRUE);
-	xSemaphoreGive(my_semaphore_handle);
+	
+	xTaskNotifyGive(xTaskGetHandle("send"));
 	vTaskDelete(NULL);
 }
 
 void vTCPSend(void)
 {
-	xSemaphoreTake(my_semaphore_handle, pdMS_TO_TICKS(4000));
+	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 	myIMAGE_DATA loaded_data;
 	xQueueReceive(my_queue_handle, &loaded_data, 0);
 	pixel_t* encrypted_data = loaded_data.bitmap_data;
@@ -257,13 +260,9 @@ void vTCPSend(void)
 	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
 	while (send_result == 0);
 
-	vTaskDelete(xTaskGetHandle("Run"));
 	vTaskDelete(xTaskGetHandle("Client"));
-	//xTaskHandle initialize_client_handle;
-	//vLoadImage();
-	//xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 4, &initialize_client_handle);
 
-	xSemaphoreGive(my_semaphore_handle);
+	xTaskNotifyGive(xTaskGetHandle("Run"));
 	
 	vTaskDelete(NULL);
 
@@ -274,7 +273,7 @@ int main(void)
 {
 	//prvInitialiseHeap();
 	initialise_network();
-	my_semaphore_handle = xSemaphoreCreateBinary();
+	//my_semaphore_handle = xSemaphoreCreateBinary();
 	vTaskStartScheduler();
 	for (;;);
 	return 0;
@@ -338,10 +337,11 @@ void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 			 * For convenience, tasks that use FreeRTOS+TCP can be created here
 			 * to ensure they are not created before the network is usable.
 			 */
-			xTaskHandle initialize_client_handle;
+			xTaskHandle Run_application_handle;
 			
 			vLoadImage();
-			xTaskCreate(vRunApplication, "Run", 1000, NULL, 2, &initialize_client_handle);
+			xTaskCreate(vRunApplication, "Run", 1000, NULL, 2, &Run_application_handle);
+			xTaskNotifyGive(Run_application_handle);
 			
 			server_flag = 1;// Denotes that the client and the server are up and running
 			xTasksAlreadyCreated = pdTRUE;
