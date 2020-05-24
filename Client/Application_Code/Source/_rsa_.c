@@ -86,7 +86,7 @@ compressed_image encrypt(pixel_t* msg, int msg_length, long int key)
     for (long int i = 0; i < c; i++)
     {
         k = 1;
-        en_msg[i] = en_msg[i]+(i/512)+(i%512);//adding 2 so that values 0 and 1 also are consealed
+        en_msg[i] = msg[i]+(i/512)+(i%512);//adding 2 so that values 0 and 1 also are consealed
         for(long int j=0;j<key;j++)// message to the power of the key
         {
             k=k*(en_msg[i]);
@@ -103,21 +103,10 @@ compressed_image encrypt(pixel_t* msg, int msg_length, long int key)
 }
 pixel_t* decrypt(compressed_image comp_msg, long int key)
 {
-    int msg_length, l= comp_msg.en_msg_length, flag=0, counter=0;
-    for (int i = 0;i < l-1;i++) {
-        msg_length += comp_msg.en_msg[i];
-    }
-    if (comp_msg.en_msg[l] == 1)flag = 255;
-    pixel_t* msg = (pixel_t*)pvportmalloc(msg_length * sizeof(pixel_t));
-    for (int i = 0; i < l-1; i++)
-    {
-        for (int j = 0; j < comp_msg.en_msg[i];j++) {
-            msg[counter] = flag;
-            counter++;
-        }
-        flag = flag == 0 ? 255 : 0;
-    }
     
+    int msg_length;
+    pixel_t* msg = comp_msg.en_msg;
+    msg_length = comp_msg.en_msg_length;
     long int n = encryptionPrime1 * encryptionPrime2;
     long int k; // using the first possible value of d
     for (long int i = 0; i < msg_length; i++)
@@ -131,8 +120,22 @@ pixel_t* decrypt(compressed_image comp_msg, long int key)
         }
         msg[i] = k-(i/512)-(i%512);
         
-    } 
-    //free(en);
-    //free(&msg_length);
-    return msg;
+    } //decryption is over
+
+    //start the de-compression
+    int actual_length = 0, flag = 0, counter = 0;
+    for (int i = 0;i < msg_length - 1;i++) {
+        actual_length += msg[i];
+    }// find out the actual message length
+    if (comp_msg.en_msg[msg_length] == 1)flag = 255;
+    pixel_t* de_msg = (pixel_t*)pvPortMalloc(actual_length * sizeof(pixel_t));
+    for (int i = 0; i < msg_length - 1; i++)
+    {
+        for (int j = 0; j < msg[i];j++) {
+            de_msg[counter] = flag;
+            counter++;
+        }
+        flag = flag == 0 ? 255 : 0;
+    }
+    return de_msg;
 }

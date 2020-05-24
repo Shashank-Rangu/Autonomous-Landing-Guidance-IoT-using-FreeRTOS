@@ -11,8 +11,8 @@ typedef struct
     int en_msg_length;
 } compressed_image;
 
-compressed_image encrypt( pixel_t*, int, long int);
-pixel_t* decrypt(compressed_image, int, long int);
+compressed_image encrypt(pixel_t* msg, int msg_length, long int key);
+pixel_t* decrypt(compressed_image comp_msg, long int key);
 
 compressed_image rsa_encryption( pixel_t* msg, int msg_length);
-pixel_t* rsa_decryption(compressed_image msg, int msg_length);
+pixel_t* rsa_decryption(compressed_image msg);

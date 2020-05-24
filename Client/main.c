@@ -187,8 +187,8 @@ void vLoadImage(void)
 void vRunApplication(void)
 {
 	//This is a task function with a priority of 4 started by the NetworkEventHook
-	for (;;) 
-	{
+	//for (;;) 
+	//{
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 		BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
 		while (send_result != pdTRUE);
@@ -199,7 +199,7 @@ void vRunApplication(void)
 		xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 6, &encryption_handle);
 		xTaskCreate(vTCPSend, "send", 1000, NULL, 5, &send_handle);
 		xTaskNotifyGive(dummy_handle);
-	}
+	//}
 }
 
 void CannyFilter()

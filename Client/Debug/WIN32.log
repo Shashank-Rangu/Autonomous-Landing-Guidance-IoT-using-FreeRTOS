@@ -1,28 +1,15 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
 cl : command line warning D9002: ignoring unknown option '/wc4574'
-  main.c
+  _rsa_.c
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(144,14): warning C4013: 'vLoggingInit' undefined; assuming extern returning int
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(147,6): warning C4013: 'time' undefined; assuming extern returning int
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(196,39): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(196,39): warning C4047: 'function': 'TaskFunction_t' differs in levels of indirection from 'Socket_t (__cdecl *)(void)'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(196,39): warning C4024: 'xTaskCreate': different types for formal and actual parameter 1
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(198,26): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(199,28): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(200,23): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(208,26): warning C4459: declaration of 'loaded_data' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(133,14): message : see declaration of 'loaded_data'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(210,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(230,26): warning C4459: declaration of 'loaded_data' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(133,14): message : see declaration of 'loaded_data'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(232,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(252,26): warning C4459: declaration of 'loaded_data' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(133,14): message : see declaration of 'loaded_data'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(254,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(340,31): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(360,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(360,9): message : consider using '%ld' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(12,62): warning C4013: 'prime' undefined; assuming extern returning int
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(30,1): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(80,26): warning C4242: '=': conversion from 'int' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(89,43): warning C4244: '=': conversion from 'long' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(95,20): warning C4242: '=': conversion from 'long' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(97,21): warning C4242: '=': conversion from 'int' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(121,35): warning C4244: '=': conversion from 'long' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(135,35): warning C4242: '=': conversion from 'int' to 'pixel_t', possible loss of data
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(276): warning C4702: unreachable code
   WIN32.vcxproj -> E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\.\Debug\Runway_Detection.exe
