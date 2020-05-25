@@ -133,6 +133,14 @@ int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t 
         sizeof(xCloseAfterNextSend));
         */
     
+    
+    return xBytesSent;
+}
+
+
+void vCloseSocket(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t xTotalLengthToSend)
+{
+    Socket_t xClientSocket = (Socket_t)socket_address;
     //Shutdown the socket, i.e. read and write are blocked on it henceforth
     FreeRTOS_shutdown(xClientSocket, FREERTOS_SHUT_RDWR);
 
@@ -141,12 +149,5 @@ int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t 
 
     //Safely close the socket
     FreeRTOS_closesocket(xClientSocket);
-    return xBytesSent;
-}
-
-
-void vCloseSocket(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t xTotalLengthToSend)
-{
-    Socket_t xClientSocket = (Socket_t)socket_address;
     
 }

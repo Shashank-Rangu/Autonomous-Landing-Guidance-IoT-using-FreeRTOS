@@ -157,7 +157,7 @@ Socket_t initialise_client_socket(void)
 {
 	//This is a task function with a priority of 8 started by the vRunApplication
 	
-	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	//ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 	struct freertos_sockaddr xRemoteAddress;
 	/* Set the IP address (192.168.xx.xx) and port (7) of the remote socket
 	to which this client socket will transmit. */
@@ -165,8 +165,8 @@ Socket_t initialise_client_socket(void)
 	xRemoteAddress.sin_addr = FreeRTOS_inet_addr_quick(192, 168, 190, 149);
 	client_socket = vCreateTCPClientSocket(&xRemoteAddress);
 
-	vTaskPrioritySet(NULL, 3);
-	xTaskNotifyGive(xTaskGetHandle("Canny"));
+	vTaskPrioritySet(NULL, 2);
+	xTaskNotifyGive(xTaskGetHandle("Run"));
 	//client_flag = 1;
 	for (;;);
 }
@@ -186,20 +186,25 @@ void vLoadImage(void)
 
 void vRunApplication(void)
 {
-	//This is a task function with a priority of 4 started by the NetworkEventHook
-	//for (;;) 
-	//{
+	//This is a task function with a priority of 3 started by the NetworkEventHook
+
+	xTaskHandle dummy_handle;
+	xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 5, &dummy_handle);
+	
+	//ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	for (;;) 
+	{
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 		BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
 		while (send_result != pdTRUE);
-		xTaskHandle dummy_handle;
-		xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 5, &dummy_handle);
+		
 		TaskHandle_t canny_handle, encryption_handle, send_handle;
 		xTaskCreate(CannyFilter, "Canny", 1000, NULL, 7, &canny_handle);
 		xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 6, &encryption_handle);
 		xTaskCreate(vTCPSend, "send", 1000, NULL, 5, &send_handle);
-		xTaskNotifyGive(dummy_handle);
-	//}
+		xTaskNotifyGive(xTaskGetHandle("Canny"));
+		//xTaskNotifyGive(dummy_handle);
+	}
 }
 
 void CannyFilter()
@@ -257,7 +262,7 @@ void vTCPSend(void)
 	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
 	while (send_result == 0);
 
-	vTaskDelete(xTaskGetHandle("Client"));
+	//vTaskDelete(xTaskGetHandle("Client"));
 
 	xTaskNotifyGive(xTaskGetHandle("Run"));
 	
@@ -337,8 +342,7 @@ void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 			xTaskHandle Run_application_handle;
 			
 			vLoadImage();
-			xTaskCreate(vRunApplication, "Run", 1000, NULL, 2, &Run_application_handle);
-			xTaskNotifyGive(Run_application_handle);
+			xTaskCreate(vRunApplication, "Run", 1000, NULL, 3, &Run_application_handle);
 			
 			server_flag = 1;// Denotes that the client and the server are up and running
 			xTasksAlreadyCreated = pdTRUE;

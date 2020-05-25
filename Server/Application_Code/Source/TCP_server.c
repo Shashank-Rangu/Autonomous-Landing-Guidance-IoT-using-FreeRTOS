@@ -32,13 +32,19 @@ void xRecieveTCPData(Socket_t xConnectedSocket)
         if (lBytes >= 0)
         {
             TotalRecieved += lBytes;
+            if (pucRxBuffer[TotalRecieved - 1] == 5000)
+            {
+                xTaskCreate(Landing_guidance, "Landing guidance", configMINIMAL_STACK_SIZE, (void*)NULL, tskIDLE_PRIORITY, NULL);
+                FreeRTOS_printf(("Total recieved output: %d\n", TotalRecieved));
+                TotalRecieved = 0;
+            }
         }
         else if(lBytes == 0) continue;
-        else
+        else if(TotalRecieved != 0)
         {
             xTaskCreate(Landing_guidance, "Landing guidance", configMINIMAL_STACK_SIZE, (void*)NULL, tskIDLE_PRIORITY, NULL);
             FreeRTOS_printf(("Total recieved output: %d\n", TotalRecieved));
-            break;
+            TotalRecieved = 0;
         }
         
         

@@ -67,38 +67,40 @@ int* ce_cd()
 }
 compressed_image encrypt(pixel_t* msg, int msg_length, long int key)
 {
-     int c = 0, flag = 0;
-     if (msg[0] == 255) flag = 1;
-     for (long int i = 0; i < msg_length-1; i++)
-     {
-         int c_count = 1;
-         while (msg[i] == msg[i + 1])
-         {
-             c_count++;
-             i++;
-         }
-         msg[c] = c_count;
-         c++;
-     }
-     pixel_t* en_msg = (pixel_t*)pvPortMalloc((c+1) * sizeof(pixel_t));
+    int c = 0, flag = 0;
+    if (msg[0] == 255) flag = 1;
+    for (long int i = 0; i < msg_length-1; i++)
+    {
+        int c_count = 1;
+        while (msg[i] == msg[i + 1])
+        {
+            c_count++;
+            i++;
+        }
+        msg[c] = c_count;
+        c++;
+    }
+    pixel_t* en_msg = (pixel_t*)pvPortMalloc((c+2) * sizeof(pixel_t));
+    en_msg[c] = flag;// setting the starting number of the compressed data in the end
+    
     long int n= encryptionPrime1 * encryptionPrime2;
     long int k;// uses the first possible value of e
-    for (long int i = 0; i < c; i++)
+    for (long int i = 0; i < c+1; i++)
     {
-        k = 1;
-        en_msg[i] = msg[i]+(i/512)+(i%512);//adding 2 so that values 0 and 1 also are consealed
-        for(long int j=0;j<key;j++)// message to the power of the key
-        {
-            k=k*(en_msg[i]);
-            k=k%n;
-        }
-        en_msg[i]=k;
+    k = 1;
+    en_msg[i] = msg[i]+(i/512)+(i%512);//adding 2 so that values 0 and 1 also are consealed
+    for(long int j=0;j<key;j++)// message to the power of the key
+    {
+        k=k*(en_msg[i]);
+        k=k%n;
     }
-    en_msg[c] = flag;
+    en_msg[i]=k;
+    }
     free(msg);
+    en_msg[c + 1] = 5000; // Storing a large enough value in the end to signify the end of data
     compressed_image en_msg_comp;
     en_msg_comp.en_msg = en_msg;
-    en_msg_comp.en_msg_length = c;
+    en_msg_comp.en_msg_length = c+1;
     return en_msg_comp;
 }
 pixel_t* decrypt(compressed_image comp_msg, long int key)
@@ -106,10 +108,10 @@ pixel_t* decrypt(compressed_image comp_msg, long int key)
     
     int msg_length;
     pixel_t* msg = comp_msg.en_msg;
-    msg_length = comp_msg.en_msg_length;
+    msg_length = comp_msg.en_msg_length-1;
     long int n = encryptionPrime1 * encryptionPrime2;
     long int k; // using the first possible value of d
-    for (long int i = 0; i < msg_length; i++)
+    for (long int i = 0; i < msg_length+1; i++)
     {
         
         k=1;
@@ -124,12 +126,12 @@ pixel_t* decrypt(compressed_image comp_msg, long int key)
 
     //start the de-compression
     int actual_length = 0, flag = 0, counter = 0;
-    for (int i = 0;i < msg_length - 1;i++) {
+    for (int i = 0;i < msg_length;i++) {
         actual_length += msg[i];
     }// find out the actual message length
     if (comp_msg.en_msg[msg_length] == 1)flag = 255;
     pixel_t* de_msg = (pixel_t*)pvPortMalloc(actual_length * sizeof(pixel_t));
-    for (int i = 0; i < msg_length - 1; i++)
+    for (int i = 0; i < msg_length; i++)
     {
         for (int j = 0; j < msg[i];j++) {
             de_msg[counter] = flag;
