@@ -259,7 +259,8 @@ void vTCPSend(void)
 	pixel_t* encrypted_data = loaded_data.bitmap_data;
 
 	int msg_length = loaded_data.my_image_len;
-	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
+	printf("encrypted data: %lu \n", encrypted_data[msg_length-1]);
+ 	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
 	while (send_result == 0);
 
 	//vTaskDelete(xTaskGetHandle("Client"));

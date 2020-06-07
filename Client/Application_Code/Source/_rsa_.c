@@ -100,7 +100,8 @@ compressed_image encrypt(pixel_t* msg, int msg_length, long int key)
     en_msg[c + 1] = 5000; // Storing a large enough value in the end to signify the end of data
     compressed_image en_msg_comp;
     en_msg_comp.en_msg = en_msg;
-    en_msg_comp.en_msg_length = c+1;
+    en_msg_comp.en_msg_length = c+2;
+    printf("last value of the compressed msg = %d", en_msg_comp.en_msg[en_msg_comp.en_msg_length-1]);
     return en_msg_comp;
 }
 pixel_t* decrypt(compressed_image comp_msg, long int key)

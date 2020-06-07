@@ -32,6 +32,8 @@ void xRecieveTCPData(Socket_t xConnectedSocket)
         if (lBytes >= 0)
         {
             TotalRecieved += lBytes;
+            printf("TotalRecieved= %d, last byte value= %lu \n", TotalRecieved,  pucRxBuffer[TotalRecieved - 1]);
+            printf("last byte +1 value= %lu \n", pucRxBuffer[TotalRecieved]);
             if (pucRxBuffer[TotalRecieved - 1] == 5000)
             {
                 xTaskCreate(Landing_guidance, "Landing guidance", configMINIMAL_STACK_SIZE, (void*)NULL, tskIDLE_PRIORITY, NULL);
