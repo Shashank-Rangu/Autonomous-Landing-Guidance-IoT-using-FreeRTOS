@@ -1,0 +1,52 @@
+DSRC: IEEE 802.11p
+	Dedicated Short Range Communication
+	Increased Channel Rejection for out of channel interference
+	Lesser Channel Bandwidth (10MHz) to account for environmental losses/echoes
+		Reduces bandwidth and increases transmission time
+	New managemnt frame for synchronization
+	No authntication
+		Exchanges data without establishing a basic service set(BSS), and thus no association and authentication procedures
+		Use the wildcard BSSID in the header of the frames they exchange
+		Security has to be taken care by the upper layers of the communication stack.
+	Communication for relative speeds of 250Kmph. Typical range of 150-300m
+	Around unlisensed 5.9GHz ISM band.
+	Issues: 
+		Connection Interruption
+		Bandwidth shortage
+		coverage limitaion
+		Additional Infrastructure requirement
+
+LTE: V2X Vehicle to Everything
+	Need Global Synchronizaiton and Global systems
+	More reaction time
+	
+Internet of Vehicles Applications: 
+	Fleet Management
+	Traffic Management
+	Pollution Monitoring
+	Safe Navigation
+	Autonomous Vehicles
+	Predictive Maintenance
+Internet of Vehicles Challenges: 
+	Different Data sources with different timing requirements
+	Different QoS: different fulfillment delay and transmission data rates, etc
+	Mobility:
+		Harsh channel- Doppler, multipath fading, etc.
+		Changing network topology
+	Not enough bandwidth to support autonomous vehicles, rich infotainment media, etc
+	Varying density of vehicles
+	Coordination must be decentralized
+	We need Interoperability: 
+		Mulitple clouds, multiple services.
+	Security: DSRC prone to attacks. Both V2V and in-vehicle network should be secure
+	Privacy
+	Reliability
+	Safety: Always a priority
+
+Sensor-less traffic management using genetic algorithms
+Multi-Standard Gateway for Road Side Units
+Multi-Applications support on common network infrastructure
+
+What is cognitive access spectrum? 
+	Dynamic spectrum managemnt.
+	

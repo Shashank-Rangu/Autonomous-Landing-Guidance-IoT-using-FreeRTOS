@@ -1,0 +1,8 @@
+1. Lidar based moving bot
+2. Automated Irrigation Systems
+3. Self driving motorcycle
+4. Lidar vs Camera
+
+Data encryption
+Laptop backup
+
