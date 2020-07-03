@@ -11,22 +11,16 @@ E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Projec
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(202,26): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(203,28): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(204,23): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(213,26): warning C4459: declaration of 'loaded_data' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(133,14): message : see declaration of 'loaded_data'
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(215,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(235,26): warning C4459: declaration of 'loaded_data' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(133,14): message : see declaration of 'loaded_data'
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(237,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(257,26): warning C4459: declaration of 'loaded_data' hides global declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(133,14): message : see declaration of 'loaded_data'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(262,9): warning C4777: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'int'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(262,9): message : consider using '%u' in the format string
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(262,9): message : consider using '%Iu' in the format string
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(262,9): message : consider using '%I32u' in the format string
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(259,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(346,31): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(365,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(365,9): message : consider using '%ld' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(263,9): warning C4777: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'int'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(263,9): message : consider using '%u' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(263,9): message : consider using '%Iu' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(263,9): message : consider using '%I32u' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(260,1): warning C4090: 'initializing': different 'const' qualifiers
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(347,31): warning C4028: formal parameter 1 different from declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(366,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(366,9): message : consider using '%ld' in the format string
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(282): warning C4702: unreachable code
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(283): warning C4702: unreachable code
   WIN32.vcxproj -> E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\.\Debug\Runway_Detection.exe

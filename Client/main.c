@@ -210,19 +210,19 @@ void vRunApplication(void)
 void CannyFilter()
 {
 	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-	myIMAGE_DATA loaded_data;
-	xQueueReceive(my_queue_handle, &loaded_data, 0);
-	pixel_t* in_bitmap_data = loaded_data.bitmap_data;
-	bitmap_info_header_t ih = loaded_data.ih;
+	myIMAGE_DATA loaded_data_local; // Variable to recieve/process/send data from/to queue
+	xQueueReceive(my_queue_handle, &loaded_data_local, 0);
+	pixel_t* in_bitmap_data = loaded_data_local.bitmap_data;
+	bitmap_info_header_t ih = loaded_data_local.ih;
 
 	my_ticker = 0;
 	pixel_t* out_bitmap_data =
 		canny_edge_detection(in_bitmap_data, &ih, 40, 80, 1.0);
 	configASSERT(out_bitmap_data != NULL);
 
-	loaded_data.bitmap_data = out_bitmap_data;
-	loaded_data.ih = ih;
-	BaseType_t send_resut= xQueueSend(my_queue_handle, &loaded_data, 0);
+	loaded_data_local.bitmap_data = out_bitmap_data;
+	loaded_data_local.ih = ih;
+	BaseType_t send_resut= xQueueSend(my_queue_handle, &loaded_data_local, 0);
 	while (send_resut != pdTRUE);
 	
 	xTaskNotifyGive(xTaskGetHandle("encrypt"));
@@ -232,19 +232,20 @@ void CannyFilter()
 void RSAencryption()
 {
 	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-	myIMAGE_DATA loaded_data;
-	xQueueReceive(my_queue_handle, &loaded_data, 0);
-	pixel_t* edges_data = loaded_data.bitmap_data;
-	bitmap_info_header_t ih = loaded_data.ih;
+	myIMAGE_DATA loaded_data_local;
+	xQueueReceive(my_queue_handle, &loaded_data_local, 0);
+	pixel_t* edges_data = loaded_data_local.bitmap_data;
+	bitmap_info_header_t ih = loaded_data_local.ih;
 	int msg_length = ih.height * ih.width;
 	compressed_image en_img = rsa_encryption(edges_data, msg_length);
 	FreeRTOS_printf(("Encryption is complete \n"));
 	vTaskPrioritySet(NULL, 6);
 
 	configASSERT(edges_data != NULL);
-	loaded_data.bitmap_data = en_img.en_msg;
-	loaded_data.my_image_len = en_img.en_msg_length;
-	BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
+	loaded_data_local.bitmap_data = en_img.en_msg;
+	loaded_data_local.my_image_len = en_img.en_msg_length;
+	FreeRTOS_printf(("Length of compressed image= %d, last value=%d \n", en_img.en_msg_length, en_img.en_msg[en_img.en_msg_length-1]));
+	BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data_local, 0);
 	while (send_result != pdTRUE);
 	
 	xTaskNotifyGive(xTaskGetHandle("send"));
@@ -254,9 +255,9 @@ void RSAencryption()
 void vTCPSend(void)
 {
 	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-	myIMAGE_DATA loaded_data;
-	xQueueReceive(my_queue_handle, &loaded_data, 0);
-	pixel_t* encrypted_data = loaded_data.bitmap_data;
+	myIMAGE_DATA loaded_data_local;
+	xQueueReceive(my_queue_handle, &loaded_data_local, 0);
+	pixel_t* encrypted_data = loaded_data_local.bitmap_data;
 
 	int msg_length = loaded_data.my_image_len;
 	printf("encrypted data: %lu \n", encrypted_data[msg_length-1]);

@@ -23,18 +23,23 @@ void xRecieveTCPData(Socket_t xConnectedSocket)
     long server_tick_counter = 0;
     long start_ticker;
     int32_t lBytes;//To count the number of recieved in each iteration
-    pixel_t* pucRxBuffer = (pixel_t*)malloc(300000 * sizeof(pixel_t));
+    int* pucRxBuffer = (int*)malloc(300000 * sizeof(int));
+    //pixel_t debugging_test[8] = { 1, 2, 10, 31, 32, 33, 50, 5000 };
 
     BaseType_t TotalRecieved = 0;//To print the number of bytes recieved
     while (1)
     {
         lBytes = FreeRTOS_recv(xConnectedSocket, &(pucRxBuffer[TotalRecieved]), ipconfigTCP_MSS, 0);
+        //pucRxBuffer = &debugging_test;
         if (lBytes >= 0)
         {
             TotalRecieved += lBytes;
             printf("TotalRecieved= %d, last byte value= %lu \n", TotalRecieved,  pucRxBuffer[TotalRecieved - 1]);
             printf("last byte +1 value= %lu \n", pucRxBuffer[TotalRecieved]);
-            if (pucRxBuffer[TotalRecieved - 1] == 5000)
+            printf("The recieved array is: %d %d %d %d %d %d %d %d \n", pucRxBuffer[0],
+                pucRxBuffer[1], pucRxBuffer[2], pucRxBuffer[3], pucRxBuffer[4], 
+                pucRxBuffer[5], pucRxBuffer[6], pucRxBuffer[7]);
+            if (pucRxBuffer[TotalRecieved - 1] == 5000)//end of file reached
             {
                 xTaskCreate(Landing_guidance, "Landing guidance", configMINIMAL_STACK_SIZE, (void*)NULL, tskIDLE_PRIORITY, NULL);
                 FreeRTOS_printf(("Total recieved output: %d\n", TotalRecieved));
