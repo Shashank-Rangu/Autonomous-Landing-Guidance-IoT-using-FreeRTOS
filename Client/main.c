@@ -173,6 +173,8 @@ Socket_t initialise_client_socket(void)
 
 void vLoadImage(void)
 {
+	long start_ticker, tick_counter;
+	start_ticker = xTaskGetTickCount();
 	my_queue_handle = xQueueCreate(1, sizeof(myIMAGE_DATA));
 	bitmap_info_header_t ih;
 	const pixel_t* in_bitmap_data = load_bmp(".\\inputs\\_lenna.bmp", &ih);
@@ -180,8 +182,9 @@ void vLoadImage(void)
 	loaded_data.bitmap_data = in_bitmap_data;
 	loaded_data.ih = ih;
 	loaded_data.my_image_len = ih.height * ih.width;
-	FreeRTOS_printf(("Load Image is done. \n"));
-	//vTaskPrioritySet(NULL, 2);
+	tick_counter = xTaskGetTickCount() - start_ticker;
+	double extime = (tick_counter * 1.0) / configTICK_RATE_HZ;
+	FreeRTOS_printf(("Time take for loading image: %f \n", extime));
 }
 
 void vRunApplication(void)
@@ -203,13 +206,14 @@ void vRunApplication(void)
 		xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 6, &encryption_handle);
 		xTaskCreate(vTCPSend, "send", 1000, NULL, 5, &send_handle);
 		xTaskNotifyGive(xTaskGetHandle("Canny"));
-		//xTaskNotifyGive(dummy_handle);
 	}
 }
 
 void CannyFilter()
 {
 	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	long start_ticker, tick_counter;
+	start_ticker = xTaskGetTickCount();
 	myIMAGE_DATA loaded_data_local; // Variable to recieve/process/send data from/to queue
 	xQueueReceive(my_queue_handle, &loaded_data_local, 0);
 	pixel_t* in_bitmap_data = loaded_data_local.bitmap_data;
@@ -224,7 +228,9 @@ void CannyFilter()
 	loaded_data_local.ih = ih;
 	BaseType_t send_resut= xQueueSend(my_queue_handle, &loaded_data_local, 0);
 	while (send_resut != pdTRUE);
-	
+	tick_counter = xTaskGetTickCount() - start_ticker;
+	double extime = (tick_counter * 1.0) / configTICK_RATE_HZ;
+	FreeRTOS_printf(("Time take for Canny filter: %f \n", extime));
 	xTaskNotifyGive(xTaskGetHandle("encrypt"));
 	vTaskDelete(NULL);
 }
@@ -232,6 +238,8 @@ void CannyFilter()
 void RSAencryption()
 {
 	ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	long start_ticker, tick_counter;
+	start_ticker = xTaskGetTickCount();
 	myIMAGE_DATA loaded_data_local;
 	xQueueReceive(my_queue_handle, &loaded_data_local, 0);
 	pixel_t* edges_data = loaded_data_local.bitmap_data;
@@ -244,10 +252,11 @@ void RSAencryption()
 	configASSERT(edges_data != NULL);
 	loaded_data_local.bitmap_data = en_img.en_msg;
 	loaded_data_local.my_image_len = en_img.en_msg_length;
-	FreeRTOS_printf(("Length of compressed image= %d, last value=%d \n", en_img.en_msg_length, en_img.en_msg[en_img.en_msg_length-1]));
 	BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data_local, 0);
 	while (send_result != pdTRUE);
-	
+	tick_counter = xTaskGetTickCount() - start_ticker;
+	double extime = (tick_counter * 1.0) / configTICK_RATE_HZ;
+	FreeRTOS_printf(("Time take for encryption & compression: %f \n", extime));
 	xTaskNotifyGive(xTaskGetHandle("send"));
 	vTaskDelete(NULL);
 }
@@ -259,12 +268,9 @@ void vTCPSend(void)
 	xQueueReceive(my_queue_handle, &loaded_data_local, 0);
 	pixel_t* encrypted_data = loaded_data_local.bitmap_data;
 
-	int msg_length = loaded_data.my_image_len;
-	printf("encrypted data: %lu \n", encrypted_data[msg_length-1]);
+	int msg_length = loaded_data_local.my_image_len;
  	int send_result= vSendMessage(client_socket, encrypted_data, msg_length);
 	while (send_result == 0);
-
-	//vTaskDelete(xTaskGetHandle("Client"));
 
 	xTaskNotifyGive(xTaskGetHandle("Run"));
 	

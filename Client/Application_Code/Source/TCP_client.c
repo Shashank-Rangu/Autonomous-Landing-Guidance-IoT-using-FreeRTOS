@@ -79,21 +79,15 @@ void vConnect_Socket(void* socket_address, struct freertos_sockaddr* xServerAddr
 
 }
 
-int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t xTotalLengthToSend)
+int vSendMessage(void* socket_address, short* pcBufferToTransmitt, BaseType_t xTotalLengthToSend)
 {
     /*This function is to send the data from the buffer to the server socket and close the
     client socket*/
     long start_ticker=0, send_tick_counter=0;
-    pixel_t debugging_test[8] = { 1, 2, 10, 31, 32, 33, 50, 5000 };
-    pcBufferToTransmitt = &debugging_test;
-    xTotalLengthToSend = 8;
-    FreeRTOS_printf(("Send message started. Message length: %d \n", xTotalLengthToSend));
-    printf(" The data being sent is %d %d %d %d %d %d %d %d \n", pcBufferToTransmitt[0],
-        pcBufferToTransmitt[1], pcBufferToTransmitt[2], pcBufferToTransmitt[3], pcBufferToTransmitt[4], 
-        pcBufferToTransmitt[5], pcBufferToTransmitt[6], pcBufferToTransmitt[7]);
     Socket_t xClientSocket = (Socket_t)socket_address;
     BaseType_t xAlreadyTransmitted = 0, xBytesSent = 0;
     BaseType_t xLenToSend;
+    xTotalLengthToSend = xTotalLengthToSend * 2; // each short value has 2 bytes
 
     /* Keep sending until the entire buffer has been sent. */        
         while (xAlreadyTransmitted < xTotalLengthToSend)
@@ -107,8 +101,6 @@ int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t 
             {
                 /* Data was sent successfully. */
                 xAlreadyTransmitted += xBytesSent;
-                FreeRTOS_printf(("Bytes sent till now: %d \n", xAlreadyTransmitted));
-                FreeRTOS_printf(("Last byte sent: %d \n", pcBufferToTransmitt[xAlreadyTransmitted-1]));
             }
             else if (xBytesSent == -pdFREERTOS_ERRNO_ENOSPC)
             {
@@ -124,8 +116,7 @@ int vSendMessage(void* socket_address, pixel_t* pcBufferToTransmitt, BaseType_t 
             
             send_tick_counter += xTaskGetTickCount() - start_ticker;
         }
-    
-        FreeRTOS_printf(("Total Bytes sent: %d \n", xAlreadyTransmitted));
+ 
     double extime = (send_tick_counter * 1.0) / configTICK_RATE_HZ;
     FreeRTOS_printf(("Execution time for data send= %f \n", extime));
 
