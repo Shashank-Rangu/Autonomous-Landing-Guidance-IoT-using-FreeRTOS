@@ -26,13 +26,13 @@
  */
 
  /******************************************************************************
-  *Project description to be written here 
+  *This is the CAPSTONE PROJECT: Autonomous Runway Detection. This program and all the 
+  sub-programs are written by Shashank Rangu. 
   */
 
   /* Standard includes. */
 #include <stdio.h>
 #include <stdlib.h>
-//#include <conio.h>
 
 /* FreeRTOS kernel includes. */
 #include "FreeRTOS.h"
@@ -44,7 +44,7 @@
 #include "FreeRTOS_Sockets.h"
 #include "FreeRTOS_IP.h"
 
-/*Application includes*/
+/*Application-specific include files*/
 #include "_canny_.h"
 #include "_rsa_.h"
 #include "TCP_client.h"
@@ -58,6 +58,14 @@
 #define mainREGION_1_SIZE	7201
 #define mainREGION_2_SIZE	29905
 #define mainREGION_3_SIZE	6407
+
+/* When configSUPPORT_STATIC_ALLOCATION is set to 1 the application writer can
+use a callback function to optionally provide the memory required by the idle
+and timer tasks.  This is the stack that will be used by the timer task.  It is
+declared here, as a global, so it can be checked by a test that is implemented
+in a different file. */
+StackType_t uxTimerTaskStack[configTIMER_TASK_STACK_DEPTH];
+/*-----------------------------------------------------------*/
 
 /* Set the following constant to pdTRUE to log using the method indicated by the
 name of the constant, or pdFALSE to not log using the method indicated by the
@@ -87,6 +95,13 @@ void vApplicationGetTimerTaskMemory(StaticTask_t** ppxTimerTaskTCBBuffer, StackT
 UBaseType_t uxRand(void);
 static void prvSRand(UBaseType_t ulSeed);
 
+/* Use by the pseudo random number generator by TCP functions */
+static UBaseType_t ulNextRand;
+/*------------------------------------------------------------------*/
+
+/*End of Generic Definitions. Start of project specific Definitions*/
+
+/*------------------------------------------------------------------*/
 /*
 * Prototypes for the application code
 */
@@ -98,43 +113,31 @@ void CannyFilter();
 void RSAencryption();
 void vTCPSend(void);
 
-/* Use by the pseudo random number generator. */
-static UBaseType_t ulNextRand;
-Socket_t client_socket;
-size_t server_flag = 0, client_flag=0;//semaphores to be used here instead of global variables
-
-/* When configSUPPORT_STATIC_ALLOCATION is set to 1 the application writer can
-use a callback function to optionally provide the memory required by the idle
-and timer tasks.  This is the stack that will be used by the timer task.  It is
-declared here, as a global, so it can be checked by a test that is implemented
-in a different file. */
-StackType_t uxTimerTaskStack[configTIMER_TASK_STACK_DEPTH];
-/*-----------------------------------------------------------*/
-
-//Variable to count the number of ticks to calculate the time consumption
-BaseType_t my_ticker = 0;
-
-//queue handle
-QueueHandle_t my_queue_handle;
-
-
 /*
 * Struct to send and  recieve image data in queue
 */
 typedef struct my_image
 {
-	bitmap_info_header_t ih;
-	const pixel_t* bitmap_data;
-	int my_image_len;
+	bitmap_info_header_t ih; // To store the info header
+	const pixel_t* bitmap_data;// Pointer to the image data
+	int my_image_len;// length of the image. (Important after compression and during transmission)
 
 } myIMAGE_DATA;
 
-//To store the loaded image data
-myIMAGE_DATA loaded_data;
+/*----------------------------------------------------*/
+
+/* Socket to initialize the client socket for data transfer. Once it is initialized, 
+the same connected socket is repeatedly used to transfer the message.*/
+Socket_t client_socket;
+
+BaseType_t my_ticker = 0;//Variable to count the number of ticks to calculate the time consumption
+QueueHandle_t my_queue_handle;//queue handle
+myIMAGE_DATA loaded_data;//To store the loaded image data
 
 void initialise_network()
 {
-	/* Miscellaneous initialisation including preparing the logging and seeding
+	/* This function is the first first function run from the main function.
+	Miscellaneous initialisation including preparing the logging and seeding
 	the random number generator. */
 
 	time_t* xTimeNow = (time_t*)malloc(sizeof(time_t));
@@ -151,24 +154,6 @@ void initialise_network()
 
 	/* Initialising the IP Stack*/
 	FreeRTOS_IPInit(ucIPAddress, ucNetMask, ucGatewayAddress, ucDNSServerAddress, ucMACAddress);
-}
-
-Socket_t initialise_client_socket(void)
-{
-	//This is a task function with a priority of 8 started by the vRunApplication
-	
-	//ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-	struct freertos_sockaddr xRemoteAddress;
-	/* Set the IP address (192.168.xx.xx) and port (7) of the remote socket
-	to which this client socket will transmit. */
-	xRemoteAddress.sin_port = FreeRTOS_htons(7);
-	xRemoteAddress.sin_addr = FreeRTOS_inet_addr_quick(192, 168, 190, 149);
-	client_socket = vCreateTCPClientSocket(&xRemoteAddress);
-
-	vTaskPrioritySet(NULL, 2);
-	xTaskNotifyGive(xTaskGetHandle("Run"));
-	//client_flag = 1;
-	for (;;);
 }
 
 void vLoadImage(void)
@@ -191,22 +176,35 @@ void vRunApplication(void)
 {
 	//This is a task function with a priority of 3 started by the NetworkEventHook
 
-	xTaskHandle dummy_handle;
-	xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 5, &dummy_handle);
-	
-	//ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-	for (;;) 
+	xTaskHandle client_handle;
+	xTaskCreate(initialise_client_socket, "Client", 1000, NULL, 5, &client_handle);
+
+	for (;;)
 	{
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 		BaseType_t send_result = xQueueSend(my_queue_handle, &loaded_data, 0);
 		while (send_result != pdTRUE);
-		
+
 		TaskHandle_t canny_handle, encryption_handle, send_handle;
 		xTaskCreate(CannyFilter, "Canny", 1000, NULL, 7, &canny_handle);
 		xTaskCreate(RSAencryption, "encrypt", 1000, NULL, 6, &encryption_handle);
 		xTaskCreate(vTCPSend, "send", 1000, NULL, 5, &send_handle);
 		xTaskNotifyGive(xTaskGetHandle("Canny"));
 	}
+}
+
+Socket_t initialise_client_socket(void)
+{
+	struct freertos_sockaddr xRemoteAddress;
+	/* Set the IP address (192.168.xx.xx) and port (7) of the remote socket
+	to which this client socket will transmit. */
+	xRemoteAddress.sin_port = FreeRTOS_htons(7);
+	xRemoteAddress.sin_addr = FreeRTOS_inet_addr_quick(192, 168, 190, 149);
+	client_socket = vCreateTCPClientSocket(&xRemoteAddress);
+
+	vTaskPrioritySet(NULL, 2);
+	xTaskNotifyGive(xTaskGetHandle("Run"));
+	for (;;);
 }
 
 void CannyFilter()
@@ -281,9 +279,8 @@ void vTCPSend(void)
 
 int main(void)
 {
-	//prvInitialiseHeap();
 	initialise_network();
-	//my_semaphore_handle = xSemaphoreCreateBinary();
+
 	vTaskStartScheduler();
 	for (;;);
 	return 0;
@@ -348,11 +345,8 @@ void vApplicationIPNetworkEventHook(eIPCallbackEvent_t eNetworkEvent)
 			 * to ensure they are not created before the network is usable.
 			 */
 			xTaskHandle Run_application_handle;
-			
 			vLoadImage();
 			xTaskCreate(vRunApplication, "Run", 1000, NULL, 3, &Run_application_handle);
-			
-			server_flag = 1;// Denotes that the client and the server are up and running
 			xTasksAlreadyCreated = pdTRUE;
 		}
 		FreeRTOS_GetAddressConfiguration(&ulIPAddress, &ulNetMask, &ulGatewayAddress, &ulDNSServerAddress);

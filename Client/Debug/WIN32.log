@@ -3,20 +3,20 @@ cl : command line warning D9002: ignoring unknown option '/wc4574'
   main.c
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(144,14): warning C4013: 'vLoggingInit' undefined; assuming extern returning int
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(147,6): warning C4013: 'time' undefined; assuming extern returning int
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(195,38): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(195,38): warning C4047: 'function': 'TaskFunction_t' differs in levels of indirection from 'Socket_t (__cdecl *)(void)'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(195,38): warning C4024: 'xTaskCreate': different types for formal and actual parameter 1
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(205,26): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(206,28): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(207,23): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(219,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(245,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(269,1): warning C4090: 'initializing': different 'const' qualifiers
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(353,31): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(372,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(372,9): message : consider using '%ld' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(147,14): warning C4013: 'vLoggingInit' undefined; assuming extern returning int
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(150,6): warning C4013: 'time' undefined; assuming extern returning int
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(180,38): warning C4028: formal parameter 1 different from declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(180,38): warning C4047: 'function': 'TaskFunction_t' differs in levels of indirection from 'Socket_t (__cdecl *)(void)'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(180,38): warning C4024: 'xTaskCreate': different types for formal and actual parameter 1
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(189,26): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(190,28): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'TaskFunction_t'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(191,23): warning C4028: formal parameter 1 different from declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(217,1): warning C4090: 'initializing': different 'const' qualifiers
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(243,1): warning C4090: 'initializing': different 'const' qualifiers
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(267,1): warning C4090: 'initializing': different 'const' qualifiers
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(349,31): warning C4028: formal parameter 1 different from declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(366,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(366,9): message : consider using '%ld' in the format string
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(289): warning C4702: unreachable code
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(286): warning C4702: unreachable code
   WIN32.vcxproj -> E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\.\Debug\Runway_Detection.exe

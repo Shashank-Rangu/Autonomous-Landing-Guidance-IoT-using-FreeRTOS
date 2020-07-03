@@ -9,7 +9,7 @@ static const TickType_t xSendTimeOut = pdMS_TO_TICKS(2000);
 
 /*
 1. Create client socket
-2. Create a buffer to send the file. FTP??
+2. Create a buffer to send the file.
 3. Connect the socket to the remote server socket
 4. Send data to the remote server socket
 5. Shutdown the socket

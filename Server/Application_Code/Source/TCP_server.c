@@ -7,13 +7,14 @@ missing data. */
 static const TickType_t xReceiveTimeOut = pdMS_TO_TICKS(4000);
 
 /*
-1. Create client socket
-2. Create a buffer to send the file. FTP??
-3. Connect the socket to the remote server socket
-4. Send data to the remote server socket
-5. Shutdown the socket
-6. Disconnect the socket
+1. Create server socket
+2. Create a buffer to recieve the file.
+3. Bind the socket to a port
+4. Set the socket in listening state and accept incoming connections
+5. Recieve the data and store in the buffer
+6. Shutdown the socket
 7. Close the socket
+8. Landing guidance module
 */
 
 void Landing_guidance(void*);
@@ -88,7 +89,7 @@ Socket_t* vCreateTCPServerSocket(void)
     /*Set a time out so accept() will just wait for a connection.*/
     FreeRTOS_setsockopt(xServerSocket, 0, FREERTOS_SO_RCVTIMEO, &xReceiveTimeOut, sizeof(xReceiveTimeOut));
 
-    /* Set the listening port to 15000. */
+    /* Set the listening port to 7. */
     xBindAddress.sin_port = FreeRTOS_htons(7);
 
     //Bind the socket to the port
@@ -106,7 +107,7 @@ Socket_t* vCreateTCPServerSocket(void)
         xConnectedSocket = FreeRTOS_accept(xServerSocket, &xClient, &xSize);
         configASSERT(xConnectedSocket != FREERTOS_INVALID_SOCKET);
         FreeRTOS_printf(("Socket connected to server \n"));
-        xTaskCreate(xRecieveTCPData, "Recieve Data", 1000, xConnectedSocket, 2, NULL);
+        xTaskCreate(xRecieveTCPData, "Receive Data", 1000, xConnectedSocket, 3, NULL);
     }
     return xServerSocket;
 }
