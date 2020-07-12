@@ -1,0 +1,42 @@
+Embedded Hardware and Operating Systems: 
+	Evaluate the Performance, Cost and Energy
+Real-Time Operating Systems:
+	Use FreeRTOS to:
+		Modify algorithms
+		Integrate algorithms into the system
+		Implement new algorithms
+Web Connectivity and Security:
+	To connect to the cloud server
+	To securely transfer the data without loss of integrety.
+
+Create all FreeRTOS Tasks that are necessary 
+Demonstate that the Edge detection algorithm works by outputing the filtered file and converting it back to a bitmap image
+This algorithm must provide 25 pictures per second. 
+Demonstate encryption algorithm by encrypting and decrypting some data.
+Create a proper communication channel between edge detection and encrypting task.
+Demonstate that this algorithm can provide 25 frames per second. 
+Implement TCP server on a selected machine. 
+Stream the data using TCP client in FreeRTOS. 
+Create TCP streaming task FreeRTOS_socket
+
+Report should include: 
+Configuration parameters for FreeRTOS
+Details about all tasks created in FreeRTOS including the scheduling priorities. 
+How the edge detection algorithm is integrated along with a screenshot of before and after
+Same for the encryption algorithm. Output from the encrpted data of your choice. 
+How the TCP client has been implemented and the screenshot of sucessfuly transmitting the data by the client. 
+How communication between the tasks has been handled? and the reason for that choice? 
+Screenshot of sucessfuly running the TCP server, which is recieving the data. 
+Discussion and reference: 
+	Relevant techniques and hardware for interconnecting the camera in a real world platform. 
+		Resolution/ Picture quality
+		Energy consumption
+		Throughput requirement of the communication: Speed of the communication. 
+		Reliability
+		Financial estimate of such a system. 
+	Reference to the choice of hardware and Operating System
+		Performance
+		Energy consumption
+		Availability
+		Cost of the OS
+		Relevance to the industry 

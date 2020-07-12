@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="RTOS_Source_Code\Source\croutine.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\event_groups.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\list.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\queue.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\stream_buffer.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\tasks.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\timers.c">
+      <Filter>RTOS_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\heap_5.c">
+      <Filter>RTOS_Source\Source\Portable</Filter>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\port.c">
+      <Filter>RTOS_Source\Source\Portable</Filter>
+    </ClCompile>
+    <ClCompile Include="Application_Code\Source\_rsa_.c">
+      <Filter>Application Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Application Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Application_Code\Source\_canny_.c">
+      <Filter>Application Code\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\BufferAllocation_2.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_ARP.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_DHCP.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_DNS.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_IP.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_Sockets.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_TCP_IP.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_UDP_IP.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\NetworkInterface.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP_Source_Code\Source\demo_logging.c">
+      <Filter>TCP_Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Application_Code\Source\TCP_server.c">
+      <Filter>Application Code\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="RTOS_Source">
+      <UniqueIdentifier>{5b0673bd-e1fd-4952-93de-659ae412a0dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RTOS_Source\Include">
+      <UniqueIdentifier>{d487d627-11e9-4e5e-bfc8-b9245108f45e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RTOS_Source\Source">
+      <UniqueIdentifier>{16b74dd4-bc0b-475d-ace5-058a1fd9bd2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RTOS_Source\Source\Portable">
+      <UniqueIdentifier>{f98654e1-eba9-470b-ab0c-3862968c693d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configuration Files">
+      <UniqueIdentifier>{b2e40f18-e080-480c-ac7b-8618b2bb57ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application Code">
+      <UniqueIdentifier>{193e5d38-103d-4bb9-8f76-5677aa477c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application Code\Source">
+      <UniqueIdentifier>{fb3156e9-a880-443f-ac02-f1770886fbd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application Code\Include">
+      <UniqueIdentifier>{c94084a6-1b61-44ed-b502-fac15e788cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TCP_Source">
+      <UniqueIdentifier>{eb694835-723a-4ab6-9da6-9abb655020de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TCP_Source\Source">
+      <UniqueIdentifier>{7cb0b8bd-2cc6-45b4-8e2c-89d35ff6efa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TCP_Source\Include">
+      <UniqueIdentifier>{0da2ce05-735d-411c-929b-eac84edb2dae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RTOS_Source_Code\Include\croutine.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\event_groups.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\FreeRTOS.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\list.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\message_buffer.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\portable.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\portmacro.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\projdefs.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\queue.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\semphr.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\stream_buffer.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\task.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RTOS_Source_Code\Include\timers.h">
+      <Filter>RTOS_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Application_Code\Include\_rsa_.h">
+      <Filter>Application Code\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Application_Code\Include\_canny_.h">
+      <Filter>Application Code\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOSConfig.h">
+      <Filter>Configuration Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOSIPConfig.h">
+      <Filter>Configuration Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_ARP.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_DHCP.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_DNS.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_errno_TCP.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_IP.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_IP_Private.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_Sockets.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_Stream_Buffer.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_TCP_IP.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_TCP_WIN.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_UDP_IP.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOSIPConfigDefaults.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\IPTraceMacroDefaults.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\NetworkBufferManagement.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\NetworkInterface.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\pack_struct_end.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="TCP_Source_Code\Include\pack_struct_start.h">
+      <Filter>TCP_Source\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Application_Code\Include\TCP_Server.h">
+      <Filter>Application Code\Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C686325E-3261-42F7-AEB1-DDE5280E1CEB}</ProjectGuid>
+    <ProjectName>Runway_Detection</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\Debug/WIN32.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\TCP_Source_Code\Include\WinPCap\pcap;.\TCP_Source_Code\Include\WinPCap;.\TCP_Source_Code\Include;\RTOS_Source_Code\Config;.\RTOS_Source_Code\Include;.\Application_Code\Include;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WIN32_WINNT=0x0601;WINVER=0x400;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug/WIN32.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <AdditionalOptions>/wd4210 /wc4574 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4574;4820;4668;4255;4710;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>.\Debug/Runway_Detection.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/WIN32.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>.\TCP_Source_Code\Include\WinPCap</AdditionalLibraryDirectories>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/WIN32.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application_Code\Source\TCP_server.c" />
+    <ClCompile Include="Application_Code\Source\_canny_.c" />
+    <ClCompile Include="Application_Code\Source\TCP_client.c" />
+    <ClCompile Include="Application_Code\Source\_rsa_.c" />
+    <ClCompile Include="main.c">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="RTOS_Source_Code\Source\croutine.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\event_groups.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\heap_4.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\list.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\port.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\queue.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\stream_buffer.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\tasks.c" />
+    <ClCompile Include="RTOS_Source_Code\Source\timers.c" />
+    <ClCompile Include="TCP_Source_Code\Source\BufferAllocation_2.c" />
+    <ClCompile Include="TCP_Source_Code\Source\demo_logging.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_ARP.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_DHCP.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_DNS.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_IP.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_Sockets.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_TCP_IP.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c" />
+    <ClCompile Include="TCP_Source_Code\Source\FreeRTOS_UDP_IP.c" />
+    <ClCompile Include="TCP_Source_Code\Source\NetworkInterface.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application_Code\Include\TCP_client.h" />
+    <ClInclude Include="Application_Code\Include\TCP_Server.h" />
+    <ClInclude Include="Application_Code\Include\_canny_.h" />
+    <ClInclude Include="Application_Code\Include\_rsa_.h" />
+    <ClInclude Include="FreeRTOSConfig.h" />
+    <ClInclude Include="FreeRTOSIPConfig.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\croutine.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\event_groups.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\FreeRTOS.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\list.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\message_buffer.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\portable.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\portmacro.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\projdefs.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\queue.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\semphr.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\stream_buffer.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\task.h" />
+    <ClInclude Include="RTOS_Source_Code\Include\timers.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOSIPConfigDefaults.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_ARP.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_DHCP.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_DNS.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_errno_TCP.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_IP.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_IP_Private.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_Sockets.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_Stream_Buffer.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_TCP_IP.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_TCP_WIN.h" />
+    <ClInclude Include="TCP_Source_Code\Include\FreeRTOS_UDP_IP.h" />
+    <ClInclude Include="TCP_Source_Code\Include\IPTraceMacroDefaults.h" />
+    <ClInclude Include="TCP_Source_Code\Include\NetworkBufferManagement.h" />
+    <ClInclude Include="TCP_Source_Code\Include\NetworkInterface.h" />
+    <ClInclude Include="TCP_Source_Code\Include\pack_struct_end.h" />
+    <ClInclude Include="TCP_Source_Code\Include\pack_struct_start.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
