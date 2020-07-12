@@ -18,5 +18,355 @@ E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Projec
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(366,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(366,9): message : consider using '%ld' in the format string
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  demo_logging.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\demo_logging.c(296,16): warning C4296: '<': expression is always false
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  NetworkInterface.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\NetworkInterface.c(281,12): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'BaseType_t'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\NetworkInterface.c(281,12): message : consider using '%ld' in the format string
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\NetworkInterface.c(296,12): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'BaseType_t'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\NetworkInterface.c(296,12): message : consider using '%ld' in the format string
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_UDP_IP.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_UDP_IP.c(364,20): warning C4310: cast truncates constant value
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_UDP_IP.c(365,47): warning C4310: cast truncates constant value
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_TCP_WIN.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_TCP_IP.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(858,60): warning C4310: cast truncates constant value
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1843,56): warning C4310: cast truncates constant value
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_Stream_Buffer.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_Sockets.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_IP.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(948,43): warning C4459: declaration of 'ucIPAddress' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\FreeRTOSConfig.h(148,26): message : see declaration of 'ucIPAddress'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(948,99): warning C4459: declaration of 'ucNetMask' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\FreeRTOSConfig.h(149,26): message : see declaration of 'ucNetMask'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(948,153): warning C4459: declaration of 'ucGatewayAddress' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\FreeRTOSConfig.h(150,26): message : see declaration of 'ucGatewayAddress'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(948,214): warning C4459: declaration of 'ucDNSServerAddress' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\FreeRTOSConfig.h(151,26): message : see declaration of 'ucDNSServerAddress'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(948,277): warning C4459: declaration of 'ucMACAddress' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\FreeRTOSConfig.h(147,20): message : see declaration of 'ucMACAddress'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(958,2): warning C4127: conditional expression is constant
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(959,2): warning C4127: conditional expression is constant
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(960,2): warning C4127: conditional expression is constant
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(961,2): warning C4127: conditional expression is constant
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(962,2): warning C4127: conditional expression is constant
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_DNS.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(518,26): warning C4310: cast truncates constant value
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_DHCP.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  FreeRTOS_ARP.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  BufferAllocation_2.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  timers.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  tasks.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  stream_buffer.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  queue.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  port.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  list.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  heap_4.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  Generating Code...
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\heap_4.c(202): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\heap_4.c(187): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\heap_4.c(202): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2355): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2351): message : index 'xTicksToWait' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2355): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2652): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2648): message : index 'ux' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2661): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2432): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2428): message : index 'xTicksToWait' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\queue.c(2432): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(621): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(619): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(621): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(619): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(616): message : index 'xReturn' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(619): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(571): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(569): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(571): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(569): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(564): message : index 'xReturn' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(569): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(834): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(827): message : index 'xBytesAvailable' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(834): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(829): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(827): message : index 'xBytesAvailable' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(829): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(778): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(770): message : index 'xBytesAvailable' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(778): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(772): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(770): message : index 'xBytesAvailable' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(772): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(753): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(745): message : index 'xBytesAvailable' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(753): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1043): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1039): message : index 'xCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1043): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1094): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1090): message : index 'xCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1094): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1086): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1073): message : index 'xCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\stream_buffer.c(1086): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(1307): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(1293): message : index 'xTicksToDelay' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(1307): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(4429): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(4427): message : index 'xTicksToWait' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(4429): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(4502): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(4500): message : index 'xTicksToWait' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(4502): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(3442): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(3440): message : index 'uxPriority' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\tasks.c(3442): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\timers.c(557): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\timers.c(554): message : index 'xNextExpireTime' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\timers.c(557): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\BufferAllocation_2.c(136): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\BufferAllocation_2.c(128): message : index 'x' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\BufferAllocation_2.c(136): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\BufferAllocation_2.c(252): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\BufferAllocation_2.c(248): message : index 'xRequestedSizeBytes' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\BufferAllocation_2.c(252): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(315): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(310): message : index 'xIpEntry' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(315): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(635): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(630): message : index 'x' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(635): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(511): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(498): message : index 'x' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_ARP.c(511): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(499): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(494): message : index 'xAttempt' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(499): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(816): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(797): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(816): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(802): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(797): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(802): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(771): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(757): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_DNS.c(771): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(1836): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(1833): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(1836): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(1531): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(1518): message : index 'uxHeaderLength' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_IP.c(1531): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(840): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(801): message : index 'xTotalDataLength' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(840): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(836): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(801): message : index 'xTotalDataLength' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(836): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2334): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2330): message : index 'xByteCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2358): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2339): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2330): message : index 'xByteCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2339): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2472): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2466): message : index 'xByteCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Sockets.c(2622): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(180): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(177): message : index 'uxCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(180): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(173): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(151): message : index 'uxCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(173): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(109): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(107): message : index 'uxNextHead' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(114): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(99): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(95): message : index 'uxCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_Stream_Buffer.c(99): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(3088): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(3082): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(3088): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1967): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1965): message : index 'lCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1967): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1959): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1951): message : index 'lLength' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1959): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1259): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1256): message : index 'ulCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1259): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(671): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(667): message : index 'uxIndex' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(671): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2885): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2883): message : index 'xSendLength' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2885): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2201): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2195): message : index 'lOffset' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2201): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2439): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2433): message : index 'ulCount' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(2439): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1726): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1717): message : index 'lDataLen' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1850): message : feeds memory load on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1806): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1785): message : index 'lDataLen' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1806): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1796): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1785): message : index 'lDataLen' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1796): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1788): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1785): message : index 'lDataLen' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1788): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1753): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1717): message : index 'lDataLen' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1753): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1721): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1717): message : index 'lDataLen' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_IP.c(1721): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(1059): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(1044): message : index 'lBytesLeft' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(1059): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(1287): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(1283): message : index '' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(1287): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(334): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(326): message : index 'xIndex' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\TCP_Source_Code\Source\FreeRTOS_TCP_WIN.c(334): message : feeds call on this line
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\main.c(286): warning C4702: unreachable code
+  Compiling...
+  event_groups.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  croutine.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  _rsa_.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(12,62): warning C4013: 'prime' undefined; assuming extern returning int
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(30,1): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(80,25): warning C4242: '=': conversion from 'int' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(84,21): warning C4242: '=': conversion from 'int' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(91,39): warning C4244: '=': conversion from 'long' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(97,16): warning C4242: '=': conversion from 'long' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(123,35): warning C4244: '=': conversion from 'long' to 'pixel_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_rsa_.c(137,35): warning C4242: '=': conversion from 'int' to 'pixel_t', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  _canny_.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(52,1): warning C4013: 'vLoggingPrintf' undefined; assuming extern returning int
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(94,97): warning C4244: '=': conversion from 'double' to 'size_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(95,22): warning C4018: '<': signed/unsigned mismatch
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(96,23): warning C4018: '<': signed/unsigned mismatch
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(165,23): warning C4018: '<': signed/unsigned mismatch
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(166,24): warning C4018: '<': signed/unsigned mismatch
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(133,1): warning C4204: nonstandard extension used: non-constant aggregate initializer
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(151,1): warning C4204: nonstandard extension used: non-constant aggregate initializer
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(163,1): warning C4244: 'initializing': conversion from 'double' to 'size_t', possible loss of data
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(252,53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  TCP_server.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(28,45): warning C4459: declaration of 'xReceiveTimeOut' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(7,25): message : see declaration of 'xReceiveTimeOut'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(29,42): warning C4459: declaration of 'xSendTimeOut' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(8,25): message : see declaration of 'xSendTimeOut'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(25,10): warning C4189: 'server_tick_counter': local variable is initialized but not referenced
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(26,10): warning C4101: 'start_ticker': unreferenced local variable
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(67,45): warning C4459: declaration of 'xReceiveTimeOut' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(7,25): message : see declaration of 'xReceiveTimeOut'
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(87,16): warning C4189: 'socket_state': local variable is initialized but not referenced
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(115,16): warning C4098: 'Landing_guidance': 'void' function returning a value
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(109,29): warning C4100: 'pvParameters': unreferenced formal parameter
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  TCP_client.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
+  Generating Code...
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_client.c(99): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_client.c(93): message : index 'xAlreadyTransmitted' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_client.c(99): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(105): warning C4702: unreachable code
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(42): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(35): message : index 'TotalRecieved' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(42): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(38): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(35): message : index 'TotalRecieved' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\TCP_server.c(38): message : feeds call on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(371): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(369): message : index 'k' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(371): message : feeds memory load on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(370): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(369): message : index 'k' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\Application_Code\Source\_canny_.c(370): message : feeds memory load on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\croutine.c(314): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\croutine.c(312): message : index 'uxPriority' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\RTOS_Source_Code\Source\croutine.c(314): message : feeds call on this line
   WIN32.vcxproj -> E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Project\.\Debug\Runway_Detection.exe

@@ -1,32 +1,19 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (.\Debug\) contains files shared from another project (Runway_Detection.vcxproj).  This can lead to incorrect clean and rebuild behavior.
 cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
 cl : command line warning D9002: ignoring unknown option '/wc4574'
-  main.c
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(109,14): warning C4013: 'vLoggingInit' undefined; assuming extern returning int
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(112,6): warning C4013: 'time' undefined; assuming extern returning int
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(186,38): warning C4028: formal parameter 1 different from declaration
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(186,38): warning C4047: 'function': 'TaskFunction_t' differs in levels of indirection from 'Socket_t *(__cdecl *)(void)'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(186,38): warning C4024: 'xTaskCreate': different types for formal and actual parameter 1
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(211,9): warning C4777: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned long'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(211,9): message : consider using '%ld' in the format string
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
   TCP_server.c
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(254,17): warning C5031: #pragma warning(pop): likely mismatch, popping warning state pushed in different file
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(161,17): message : #pragma warning(push)
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(23,10): warning C4189: 'server_tick_counter': local variable is initialized but not referenced
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(24,10): warning C4101: 'start_ticker': unreferenced local variable
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(70,45): warning C4459: declaration of 'xReceiveTimeOut' hides global declaration
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(24,10): warning C4189: 'server_tick_counter': local variable is initialized but not referenced
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(25,10): warning C4101: 'start_ticker': unreferenced local variable
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(71,45): warning C4459: declaration of 'xReceiveTimeOut' hides global declaration
 E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(7,25): message : see declaration of 'xReceiveTimeOut'
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(98,16): warning C4189: 'socket_state': local variable is initialized but not referenced
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(122,16): warning C4098: 'Landing_guidance': 'void' function returning a value
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(115,29): warning C4100: 'pvParameters': unreferenced formal parameter
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(99,16): warning C4189: 'socket_state': local variable is initialized but not referenced
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(123,16): warning C4098: 'Landing_guidance': 'void' function returning a value
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(116,29): warning C4100: 'pvParameters': unreferenced formal parameter
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h(161,17): warning C5032: detected #pragma warning(push) with no corresponding #pragma warning(pop)
-  Generating Code...
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(111): warning C4702: unreachable code
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(38): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(32): message : index 'lBytes' range checked by comparison on this line
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(38): message : feeds call on this line
-E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\main.c(128): warning C4702: unreachable code
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(112): warning C4702: unreachable code
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(39): warning C5045: Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(33): message : index 'lBytes' range checked by comparison on this line
+E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\Application_Code\Source\TCP_server.c(39): message : feeds call on this line
   Server.vcxproj -> E:\Code\Repositories\Embedded Notes\Coursera Assignments\Capstone Project\Server\.\Debug\Runway_Detection_Server.exe
