@@ -22,3 +22,6 @@ This is not yet implemented and can be tried out.
 4. This computed trajectory needs to be converted into the control parameters of the aeroplane based on the model of the plane.
 5. Finally, these control parameters can be sent back to the aeroplane in real time for it to auto adjust it's course and land smoothly. 
 
+# How to use?
+The details about the installation and usage can be found in the 'README- Usage Guide.md'
+The configuration parameters, FreeRTOS tasks, their scheduling and sample outputs can be found in 'Autonomous Runway Detection Report.docx'
