@@ -1,4 +1,4 @@
-# Autonomous Runway Dection using FreeRTOS
+# Autonomous Runway Dection and Landing Guidance using FreeRTOS
 Objective of this project is to develop a mechanism to autonomously guide an aeroplane during landing to help the pilot. 
 However this is only the part one of the project where the detection of the runway happens and the actual guidance needs to be provided based on this input. 
 
